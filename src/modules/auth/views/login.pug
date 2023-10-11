@@ -1,0 +1,268 @@
+extends ../../../views/layout
+
+block content
+    // wrapper
+    .wrapper
+      .section-authentication-cover
+        div
+          .row.g-0
+            .col-12.col-xl-7.col-xxl-8.auth-cover-left.align-items-center.justify-content-center.d-none.d-xl-flex
+              .card.shadow-none.bg-transparent.shadow-none.rounded-0.mb-0
+                .card-body
+                  img.img-fluid.auth-img-cover-login(src='assets/images/login-images/login-cover.svg', width='650', alt='')
+            | &#x9;&#x9;&#x9;&#x9;&#x9;
+            .col-12.col-xl-5.col-xxl-4.auth-cover-right.bg-light.align-items-center.justify-content-center
+              .card.rounded-0.m-3.shadow-none.bg-transparent.mb-0
+                .card-body.p-sm-5
+                  div
+                    .mb-3.text-center
+                      img(src='images/logo-dark-text.png', width='100', alt='')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .text-center.mb-4
+                      h5 Welcome to the SSAI Travel Portal
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.mb-0 Login to continue
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .form-body
+                      form.row.g-3(action='/api/v1/auth/login' method='post')
+                        .col-12
+                          label.form-label(for='inputEmailAddress') Email
+                          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                          input#inputEmailAddress.form-control(type='text' name='email' placeholder='Username')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        .col-12
+                          label.form-label(for='inputChoosePassword') Password
+                          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                          #show_hide_password.input-group
+                            input#inputChoosePassword.form-control.border-end-0(type='password' name='password' placeholder='Password')
+                            |  
+                            a.input-group-text.bg-transparent(href='javascript:;')
+                              i.bx.bx-hide
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        .col-md-6
+                          .form-check.form-switch
+                            input#flexSwitchCheckChecked.form-check-input(type='checkbox')
+                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                            label.form-check-label(for='flexSwitchCheckChecked') Remember Me
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        .col-md-6.text-end
+                          a(href='/reset') Forgot Password ?
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        .col-12
+                          .d-grid
+                            button.btn.btn-light(type='submit') Sign in
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        .col-12
+                          .text-center
+                            p.mb-0
+                              | Don&apos;t have an account yet? 
+                              a(href='registration')  Sign up here
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .login-separater.text-center.mb-5
+                      span OR SIGN IN WITH
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      hr
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .list-inline.contacts-social.text-center
+                      a.list-inline-item.bg-light.text-white.border-0.rounded-3(href='javascript:;')
+                        i.bx.bxl-facebook
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      a.list-inline-item.bg-light.text-white.border-0.rounded-3(href='javascript:;')
+                        i.bx.bxl-twitter
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      a.list-inline-item.bg-light.text-white.border-0.rounded-3(href='javascript:;')
+                        i.bx.bxl-google
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      a.list-inline-item.bg-light.text-white.border-0.rounded-3(href='javascript:;')
+                        i.bx.bxl-linkedin
+          // end row
+    // end wrapper
+    // start switcher
+    .switcher-wrapper
+      .switcher-btn
+        i.bx.bx-cog.bx-spin
+      | &#x9;&#x9;
+      .switcher-body
+        .d-flex.align-items-center
+          h5.mb-0.text-uppercase Theme Customizer
+          | &#x9;&#x9;&#x9;&#x9;
+          button.btn-close.ms-auto.close-switcher(type='button', aria-label='Close')
+        | &#x9;&#x9;&#x9;
+        hr
+        | &#x9;&#x9;&#x9;
+        p.mb-0 Gaussian Texture
+        | &#x9;&#x9;&#x9;  
+        hr
+        | &#x9;&#x9;&#x9;  
+        | &#x9;&#x9;&#x9;  
+        ul.switcher
+          li#theme1
+          | &#x9;&#x9;&#x9;&#x9;
+          li#theme2
+          | &#x9;&#x9;&#x9;&#x9;
+          li#theme3
+          | &#x9;&#x9;&#x9;&#x9;
+          li#theme4
+          | &#x9;&#x9;&#x9;&#x9;
+          li#theme5
+          | &#x9;&#x9;&#x9;&#x9;
+          li#theme6
+        hr
+        | &#x9;&#x9;&#x9;  
+        p.mb-0 Gradient Background
+        | &#x9;&#x9;&#x9;  
+        hr
+        | &#x9;&#x9;&#x9;  
+        | &#x9;&#x9;&#x9;  
+        ul.switcher
+          li#theme7
+          | &#x9;&#x9;&#x9;&#x9;
+          li#theme8
+          | &#x9;&#x9;&#x9;&#x9;
+          li#theme9
+          | &#x9;&#x9;&#x9;&#x9;
+          li#theme10
+          | &#x9;&#x9;&#x9;&#x9;
+          li#theme11
+          | &#x9;&#x9;&#x9;&#x9;
+          li#theme12
+          | &#x9;&#x9;&#x9;&#x9;
+          li#theme13
+          | &#x9;&#x9;&#x9;&#x9;
+          li#theme14
+          | &#x9;&#x9;&#x9;&#x9;
+          li#theme15
+    // end switcher
+    // plugins
+    script(src='assets/js/jquery.min.js')
+    // Password show & hide js
+    script.
+      $(document).ready(function () {
+      $("#show_hide_password a").on('click', function (event) {
+      event.preventDefault();
+      if ($('#show_hide_password input').attr("type") == "text") {
+      $('#show_hide_password input').attr('type', 'password');
+      $('#show_hide_password i').addClass("bx-hide");
+      $('#show_hide_password i').removeClass("bx-show");
+      } else if ($('#show_hide_password input').attr("type") == "password") {
+      $('#show_hide_password input').attr('type', 'text');
+      $('#show_hide_password i').removeClass("bx-hide");
+      $('#show_hide_password i').addClass("bx-show");
+      }
+      });
+      });
+    | &#x9;
+    | &#x9;
+    script.
+      $(".switcher-btn").on("click", function() {
+      $(".switcher-wrapper").toggleClass("switcher-toggled")
+      }), $(".close-switcher").on("click", function() {
+      $(".switcher-wrapper").removeClass("switcher-toggled")
+      }),
+      $('#theme1').click(theme1);
+      $('#theme2').click(theme2);
+      $('#theme3').click(theme3);
+      $('#theme4').click(theme4);
+      $('#theme5').click(theme5);
+      $('#theme6').click(theme6);
+      $('#theme7').click(theme7);
+      $('#theme8').click(theme8);
+      $('#theme9').click(theme9);
+      $('#theme10').click(theme10);
+      $('#theme11').click(theme11);
+      $('#theme12').click(theme12);
+      $('#theme13').click(theme13);
+      $('#theme14').click(theme14);
+      $('#theme15').click(theme15);
+      function theme1() {
+      $('body').attr('class', 'bg-theme bg-theme1');
+      }
+      function theme2() {
+      $('body').attr('class', 'bg-theme bg-theme2');
+      }
+      function theme3() {
+      $('body').attr('class', 'bg-theme bg-theme3');
+      }
+      function theme4() {
+      $('body').attr('class', 'bg-theme bg-theme4');
+      }
+      function theme5() {
+      $('body').attr('class', 'bg-theme bg-theme5');
+      }
+      function theme6() {
+      $('body').attr('class', 'bg-theme bg-theme6');
+      }
+      function theme7() {
+      $('body').attr('class', 'bg-theme bg-theme7');
+      }
+      function theme8() {
+      $('body').attr('class', 'bg-theme bg-theme8');
+      }
+      function theme9() {
+      $('body').attr('class', 'bg-theme bg-theme9');
+      }
+      function theme10() {
+      $('body').attr('class', 'bg-theme bg-theme10');
+      }
+      function theme11() {
+      $('body').attr('class', 'bg-theme bg-theme11');
+      }
+      function theme12() {
+      $('body').attr('class', 'bg-theme bg-theme12');
+      }
+      function theme13() {
+      $('body').attr('class', 'bg-theme bg-theme13');
+      }
+      function theme14() {
+      $('body').attr('class', 'bg-theme bg-theme14');
+      }
+      function theme15() {
+      $('body').attr('class', 'bg-theme bg-theme15');
+      }
+
+//- block content 
+//-     .bg-white.rounded10.shadow-lg
+//-         .content-top-agile.p-20.pb-0
+//-             h2.text-primary Welcome to the SSAI Travel Portal
+//-             p.mb-0 Login to continue.
+//-         .p-40
+//-             form(action='/api/v1/auth/login' method='post')
+//-                 .form-group
+//-                     .input-group.mb-3
+//-                         span.input-group-text.bg-transparent
+//-                             i.ti-user
+//-                         input.form-control.ps-15.bg-transparent(type='text' name='email' placeholder='Username')
+//-                 .form-group
+//-                     .input-group.mb-3
+//-                         span.input-group-text.bg-transparent
+//-                             i.ti-lock
+//-                         input.form-control.ps-15.bg-transparent(type='password' name='password' placeholder='Password')
+//-                 .row
+//-                     .col-6
+//-                         .checkbox
+//-                             input#basic_checkbox_1(type='checkbox')
+//-                             label(for='basic_checkbox_1') Remember Me
+//-                     // /.col
+//-                     .col-6
+//-                         .fog-pwd.text-end
+//-                             a.hover-warning(href='/reset')
+//-                                 i.ion.ion-locked
+//-                                 |  Forgot Password?
+//-                             br
+//-                     // /.col
+//-                     .col-12.text-center
+//-                         button.btn.btn-danger.mt-10(type='submit') LOGIN
+//-                     // /.col
+//-             .text-center
+//-                 p.mt-15.mb-0
+//-                 | Don't have an account? 
+//-                 a.text-warning.ms-5(href='registration') Create an Account
+//-     //- .text-center
+//-     //-     p.mt-20.text-white - Sign With -
+//-     //-     p.gap-items-2.mb-20
+//-     //-         a.btn.btn-social-icon.btn-round.btn-facebook(href='#')
+//-     //-             i.fa.fa-facebook
+//-     //-         a.btn.btn-social-icon.btn-round.btn-twitter(href='#')
+//-     //-             i.fa.fa-twitter
+//-     //-         a.btn.btn-social-icon.btn-round.btn-instagram(href='#')
+//-     //-             i.fa.fa-instagram

@@ -1,0 +1,77 @@
+const Joi = require('@hapi/joi').extend(require('@hapi/joi-date'));
+
+const options = {
+  errors: {
+    wrap: {
+      label: '',
+    },
+  },
+};
+
+module.exports = {
+  /**
+   * Validates a login request.
+   * @param {object} httpRequest - The HTTP request object.
+   * @param {object} httpRequest.body - The request body.
+   * @param {string} httpRequest.body.email - The email to validate.
+   * @param {string} httpRequest.body.password - The password to validate.
+   * @returns {object} - The validation result.
+   */
+  validateUpdateUser: (httpRequest) => {
+    const schema = Joi.object({
+      id: Joi.string().required(),
+      fname: Joi.string().min(3).max(30).required(),
+      lname: Joi.string().min(3).max(30).required(),
+      email: Joi.string()
+        .pattern(/\S+@\S+\.\S+/)
+        .required()
+        .messages({
+          'string.pattern.base': 'Provide valid email!',
+        }),
+      phone: Joi.string().min(10).max(10).required(),
+      employeeCode: Joi.string().allow(null, ''),
+      employer: Joi.string().allow(null, ''),
+      role: Joi.string().required()
+    });
+    return schema.validate(httpRequest.body, options);
+  },
+  validateListUser: (httpRequest) => {
+    const schema = Joi.object({
+    });
+    return schema.validate(httpRequest.body, options);
+  },
+  validateViewUser: (httpRequest) => {
+    const schema = Joi.object({
+    });
+    return schema.validate(httpRequest.body, options);
+  },
+  validateDeleteUser: (httpRequest) => {
+    const schema = Joi.object({
+      id: Joi.string().required()
+    });
+    return schema.validate(httpRequest.body, options);
+  },
+  validateAddUser: (httpRequest) => {
+    const schema = Joi.object({
+      password: Joi.string().min(8).max(20).required(),
+      fname: Joi.string().min(3).max(30).required(),
+      lname: Joi.string().min(3).max(30).required(),
+      email: Joi.string()
+        .pattern(/\S+@\S+\.\S+/)
+        .required()
+        .messages({
+          'string.pattern.base': 'Provide valid email!',
+        }),
+      phone: Joi.string().min(10).max(10).required(),
+      employeeCode: Joi.string().allow(null, ''),
+      employer: Joi.string().allow(null, ''),
+      role: Joi.string().required()
+    });
+    return schema.validate(httpRequest.body, options);
+  },
+  addDummy: (httpRequest) => {
+    const schema = Joi.object({
+    });
+    return schema.validate(httpRequest.body, options);
+  },
+};

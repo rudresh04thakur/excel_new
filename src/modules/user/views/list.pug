@@ -1,0 +1,110 @@
+extends ../../../views/admin_layout 
+block content
+    .wrapper
+    include ../../../views/partial/aside.pug
+    include ../../../views/partial/header.pug    
+    .page-wrapper
+        .page-content        
+            .row
+                .col-12
+                    .card
+                        .card-body
+                            .row
+                                .col-6
+                                    h4.card-title User List
+                                    | &#x9;&#x9;&#x9;&#x9;&#x9;
+                                .col-6 
+                                    form(action='/user/uploadUser' method='POST' enctype='multipart/form-data')
+                                        .row    
+                                            .col-8
+                                                .input-group.mb-3.pull-right
+                                                    input#inputGroupFile02.form-control(type='file' name='file' required)
+                                                    button.input-group-text(for='inputGroupFile02' type='submit') Upload
+                                            .col-1.pull-right.mt-2 OR
+                                            .col-3
+                                                a.waves-effect.btn.btn-primary.btn-small.pull-right(style="margin-top:-4px" href='/user/add') Add User
+
+                            .table-responsive
+
+                                table#example2.table.table-striped.table-bordered
+                                    thead
+                                        tr
+                                            th Name 
+                                            th Role 
+                                            th Employer 
+                                            th Employee Code 
+                                            th email 
+                                            th phone 
+                                            th Created At  
+                                            th Updated At 
+                                            th Actions 
+                                    tbody
+                                        - for (var i=0; i< users.length; i++)
+                                            tr
+                                                td #{users[i].fname} #{users[i].lname}
+                                                td #{roles[users[i].role]}
+                                                td #{users[i].employer || 'SSAI'}
+                                                td #{users[i].employeeCode}
+                                                td #{users[i].email}
+                                                td #{users[i].phone}
+                                                td= moment(users[i].createdAt).format('YYYY-MM-DD')
+                                                td= moment(users[i].updatedAt).format('YYYY-MM-DD')
+                                                td 
+                                                    a.waves-effect.waves-circle.btn.btn-circle.btn-success.btn-xs.pr-5(href="/user/edit/"+users[i]['_id']) 
+                                                        i.lni.lni-pencil
+                                                    |  
+                                                    button#deleteBtn.waves-effect.waves-circle.btn.btn-circle.btn-danger.btn-xs(data=users[i]['_id'])
+                                                        i.lni.lni-trash
+        include ../../../views/partial/footer.pug
+
+
+
+//- .row
+//-         .col-12
+//-             .box
+//-                 .box-header
+//-                     .row
+//-                         .col-6
+//-                             h4.box-title User List
+//-                         .col-6 
+//-                             form(action='/user/uploadUser' method='POST' enctype='multipart/form-data')
+//-                                     .row    
+//-                                         .col-8
+//-                                             .input-group.mb-3.pull-right
+//-                                                 input#inputGroupFile02.form-control(type='file' name='file' required)
+//-                                                 button.input-group-text(for='inputGroupFile02' type='submit') Upload
+//-                                         .col-1.pull-right.mt-2 OR
+//-                                         .col-3
+//-                                             a.waves-effect.btn.btn-primary.btn-small.pull-right(style="margin-top:-4px" href='/user/add') Add User
+//-                 .box-body
+//-                     .table-responsive
+//-                         table.tableList.table.table-striped.table-bordered.display(style='width:100%')
+//-                             thead
+//-                                 tr
+//-                                     th Name
+//-                                     th Role
+//-                                     th Employer
+//-                                     th Employee Code
+//-                                     th email
+//-                                     th phone
+//-                                     th Created At 
+//-                                     th Updated At
+//-                                     th Actions
+//-                             tbody
+//-                                 - for (var i=0; i< users.length; i++)
+//-                                     tr
+//-                                         td #{users[i].fname} #{users[i].lname}
+//-                                         td #{roles[users[i].role]}
+//-                                         td #{users[i].employer || 'SSAI'}
+//-                                         td #{users[i].employeeCode}
+//-                                         td #{users[i].email}
+//-                                         td #{users[i].phone}
+//-                                         td= moment(users[i].createdAt).format('YYYY-MM-DD')
+//-                                         td= moment(users[i].updatedAt).format('YYYY-MM-DD')
+//-                                         td 
+//-                                             a.waves-effect.waves-circle.btn.btn-circle.btn-success.btn-xs.pr-5(href="/user/edit/"+users[i]['_id']) 
+//-                                                 i.ti-pencil
+//-                                             |  
+//-                                             button#deleteBtn.waves-effect.waves-circle.btn.btn-circle.btn-danger.btn-xs(data=users[i]['_id'])
+//-                                                 i.ti-trash
+

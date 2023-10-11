@@ -1,0 +1,35 @@
+footer.main-footer
+	.pull-right.d-none.d-sm-inline-block
+		ul.nav.nav-primary.nav-dotted.nav-dot-separated.justify-content-center.justify-content-md-end
+			li.nav-item
+				a.nav-link(href='/') FAQ
+				| 	  © 2021 
+				a(href='/') Travel Portal
+				| . All Rights Reserved.
+script(src='/assets/js/bootstrap.bundle.min.js')
+	// plugins
+script(src='/assets/js/jquery.min.js')
+	| &#x9;
+script(src='/assets/plugins/simplebar/js/simplebar.min.js')
+	| &#x9;
+script(src='/assets/plugins/metismenu/js/metisMenu.min.js')
+	| &#x9;
+script(src='/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')
+	| &#x9;
+script(src='/assets/plugins/datatable/js/jquery.dataTables.min.js')
+	| &#x9;
+script(src='/assets/plugins/datatable/js/dataTables.bootstrap5.min.js')
+script.
+	$(document).ready(function() {
+		$('#example').DataTable()
+		});
+script.
+	$(document).ready(function() {
+	var table = $('#example2').DataTable( {
+	lengthChange: false,
+	buttons: [ 'copy', 'excel', 'pdf', 'print']
+	} );
+	table.buttons().container()
+	.appendTo( '#example2_wrapper .col-md-6:eq(0)' );
+	} );
+script(src='/assets/js/app.js')

@@ -1,0 +1,17 @@
+extends ../../../views/layout 
+
+block content 
+    .bg-white.rounded10.shadow-lg
+        .content-top-agile.p-20.pb-0
+            h3.mb-0.text-primary Reset Password
+        .p-40
+            form(action='/api/v1/auth/reset' method='post')
+                .form-group
+                    .input-group.mb-3
+                        span.input-group-text.bg-transparent
+                            i.ti-email
+                        input.form-control.ps-15.bg-transparent(type='email' name='email' placeholder='Email Address')
+                .row
+                    .col-12.text-center
+                        button.btn.btn-info.margin-top-10(type='submit') Reset Password
+                    // /.col

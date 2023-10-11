@@ -1,0 +1,79 @@
+extends ../../../views/admin_layout  
+block content
+    .wrapper
+    include ../../../views/partial/aside.pug
+    include ../../../views/partial/header.pug    
+    .page-wrapper
+        .page-content        
+            .row
+                .col-12
+                    .card
+                        .card-body
+                            .row
+                                .col-6
+                                    h4.card-title Role List
+                                    | &#x9;&#x9;&#x9;&#x9;&#x9;
+                                .col-6 
+                                    .row
+                                        .col-3
+                                        .col-3
+                                        .col-3    
+                                        .col-3
+                                            a.waves-effect.btn.btn-primary.btn-small.pull-right(style="margin-top:-4px" href='/roles/add') Add Role
+                        .card-body
+                            .table-responsive
+                                table#example2.table.table-striped.table-bordered
+                                    thead
+                                        tr
+                                            th Label
+                                            th Created At 
+                                            th Updated At
+                                            th Actions
+                                    tbody
+                                        - for (var i=0; i< roles.length; i++)
+                                            tr
+                                                td #{roles[i].label}
+                                                td= moment(roles[i].createdAt).format('YYYY-MM-DD')
+                                                td= moment(roles[i].updatedAt).format('YYYY-MM-DD')
+                                                td 
+                                                    a.waves-effect.waves-circle.btn.btn-circle.btn-success.btn-xs.pr-5(href="/roles/edit/"+roles[i]['_id']) 
+                                                        i.lni.lni-pencil
+                                                    |  
+                                                    button#deleteBtn.waves-effect.waves-circle.btn.btn-circle.btn-danger.btn-xs(data=roles[i]['_id'])
+                                                        i.lni.lni-trash
+        include ../../../views/partial/footer.pug
+
+
+//- extends ../../../views/admin_layout 
+//- block content 
+//-     .row
+//-         .col-12
+//-             .box
+//-                 .box-header
+//-                     .row
+//-                         .col-10
+//-                             h4.box-title Role List
+//-                         .col-2
+//-                             a.waves-effect.btn.btn-primary.btn-small.pull-right(style="margin-top:-4px" href='/roles/add') Add Role
+//-                 .box-body
+//-                     .table-responsive
+//-                         table.tableList.table.table-striped.table-bordered.display(style='width:100%')
+//-                             thead
+//-                                 tr
+//-                                     th Label
+//-                                     th Created At 
+//-                                     th Updated At
+//-                                     th Actions
+//-                             tbody
+//-                                 - for (var i=0; i< roles.length; i++)
+//-                                     tr
+//-                                         td #{roles[i].label}
+//-                                         td= moment(roles[i].createdAt).format('YYYY-MM-DD')
+//-                                         td= moment(roles[i].updatedAt).format('YYYY-MM-DD')
+//-                                         td 
+//-                                             a.waves-effect.waves-circle.btn.btn-circle.btn-success.btn-xs.pr-5(href="/user/edit/"+roles[i]['_id']) 
+//-                                                 i.ti-pencil
+//-                                             |  
+//-                                             button#deleteBtn.waves-effect.waves-circle.btn.btn-circle.btn-danger.btn-xs(data=roles[i]['_id'])
+//-                                                 i.ti-trash
+

@@ -1,0 +1,659 @@
+header
+  .topbar.d-flex.align-items-center
+    nav.navbar.navbar-expand.gap-3
+      .mobile-toggle-menu
+        i.bx.bx-menu
+      | &#x9;&#x9;&#x9;&#x9;&#x9;
+      .search-bar.flex-grow-1
+        .position-relative.search-bar-box
+          input.form-control.search-control(type='text' placeholder='Type to search...')
+          |  
+          span.position-absolute.top-50.search-show.translate-middle-y
+            i.bx.bx-search
+          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+          span.position-absolute.top-50.search-close.translate-middle-y
+            i.bx.bx-x
+      | &#x9;&#x9;&#x9;&#x9;&#x9;
+      .top-menu.ms-auto
+        ul.navbar-nav.align-items-center.gap-1
+          li.nav-item.mobile-search-icon.d-flex.d-lg-none(data-bs-toggle='modal' data-bs-target='#SearchModal')
+            a.nav-link(href='avascript:;')
+              i.bx.bx-search
+          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+          li.nav-item.dropdown.dropdown-laungauge.d-none.d-sm-flex
+            a.nav-link.dropdown-toggle.dropdown-toggle-nocaret(href='avascript:;' data-bs-toggle='dropdown')
+              img(src='/assets/images/county/02.png' width='22' alt='')
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            ul.dropdown-menu.dropdown-menu-end
+              li
+                a.dropdown-item.d-flex.align-items-center.py-2(href='javascript:;')
+                  img(src='/assets/images/county/01.png' width='20' alt='')
+                  span.ms-2 English
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              li
+                a.dropdown-item.d-flex.align-items-center.py-2(href='javascript:;')
+                  img(src='/assets/images/county/02.png' width='20' alt='')
+                  span.ms-2 Catalan
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              li
+                a.dropdown-item.d-flex.align-items-center.py-2(href='javascript:;')
+                  img(src='/assets/images/county/03.png' width='20' alt='')
+                  span.ms-2 French
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              li
+                a.dropdown-item.d-flex.align-items-center.py-2(href='javascript:;')
+                  img(src='/assets/images/county/04.png' width='20' alt='')
+                  span.ms-2 Belize
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              li
+                a.dropdown-item.d-flex.align-items-center.py-2(href='javascript:;')
+                  img(src='/assets/images/county/05.png' width='20' alt='')
+                  span.ms-2 Colombia
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              li
+                a.dropdown-item.d-flex.align-items-center.py-2(href='javascript:;')
+                  img(src='/assets/images/county/06.png' width='20' alt='')
+                  span.ms-2 Spanish
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              li
+                a.dropdown-item.d-flex.align-items-center.py-2(href='javascript:;')
+                  img(src='/assets/images/county/07.png' width='20' alt='')
+                  span.ms-2 Georgian
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              li
+                a.dropdown-item.d-flex.align-items-center.py-2(href='javascript:;')
+                  img(src='/assets/images/county/08.png' width='20' alt='')
+                  span.ms-2 Hindi
+          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+          li.nav-item.dropdown.dropdown-app
+            a.nav-link.dropdown-toggle.dropdown-toggle-nocaret(data-bs-toggle='dropdown' href='javascript:;')
+              i.bx.bx-grid-alt
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            .dropdown-menu.dropdown-menu-end.p-0
+              .app-container.p-2.my-2
+                .row.gx-0.gy-2.row-cols-3.justify-content-center.p-2
+                  .col
+                    a(href='javascript:;')
+                      .app-box.text-center
+                        .app-icon
+                          img(src='/assets/images/app/slack.png' width='30' alt='')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  
+                        .app-name
+                          p.mb-0.mt-1 Slack
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 
+                  .col
+                    a(href='javascript:;')
+                      .app-box.text-center
+                        .app-icon
+                          img(src='/assets/images/app/behance.png' width='30' alt='')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  
+                        .app-name
+                          p.mb-0.mt-1 Behance
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 
+                  .col
+                    a(href='javascript:;')
+                      .app-box.text-center
+                        .app-icon
+                          img(src='/assets/images/app/google-drive.png' width='30' alt='')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  
+                        .app-name
+                          p.mb-0.mt-1 Dribble
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 
+                  .col
+                    a(href='javascript:;')
+                      .app-box.text-center
+                        .app-icon
+                          img(src='/assets/images/app/outlook.png' width='30' alt='')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  
+                        .app-name
+                          p.mb-0.mt-1 Outlook
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 
+                  .col
+                    a(href='javascript:;')
+                      .app-box.text-center
+                        .app-icon
+                          img(src='/assets/images/app/github.png' width='30' alt='')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  
+                        .app-name
+                          p.mb-0.mt-1 GitHub
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 
+                  .col
+                    a(href='javascript:;')
+                      .app-box.text-center
+                        .app-icon
+                          img(src='/assets/images/app/stack-overflow.png' width='30' alt='')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  
+                        .app-name
+                          p.mb-0.mt-1 Stack
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 
+                  .col
+                    a(href='javascript:;')
+                      .app-box.text-center
+                        .app-icon
+                          img(src='/assets/images/app/figma.png' width='30' alt='')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  
+                        .app-name
+                          p.mb-0.mt-1 Stack
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 
+                  .col
+                    a(href='javascript:;')
+                      .app-box.text-center
+                        .app-icon
+                          img(src='/assets/images/app/twitter.png' width='30' alt='')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  
+                        .app-name
+                          p.mb-0.mt-1 Twitter
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 
+                  .col
+                    a(href='javascript:;')
+                      .app-box.text-center
+                        .app-icon
+                          img(src='/assets/images/app/google-calendar.png' width='30' alt='')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  
+                        .app-name
+                          p.mb-0.mt-1 Calendar
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 
+                  .col
+                    a(href='javascript:;')
+                      .app-box.text-center
+                        .app-icon
+                          img(src='/assets/images/app/spotify.png' width='30' alt='')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  
+                        .app-name
+                          p.mb-0.mt-1 Spotify
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 
+                  .col
+                    a(href='javascript:;')
+                      .app-box.text-center
+                        .app-icon
+                          img(src='/assets/images/app/google-photos.png' width='30' alt='')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  
+                        .app-name
+                          p.mb-0.mt-1 Photos
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 
+                  .col
+                    a(href='javascript:;')
+                      .app-box.text-center
+                        .app-icon
+                          img(src='/assets/images/app/pinterest.png' width='30' alt='')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  
+                        .app-name
+                          p.mb-0.mt-1 Photos
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 
+                  .col
+                    a(href='javascript:;')
+                      .app-box.text-center
+                        .app-icon
+                          img(src='/assets/images/app/linkedin.png' width='30' alt='')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  
+                        .app-name
+                          p.mb-0.mt-1 linkedin
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 
+                  .col
+                    a(href='javascript:;')
+                      .app-box.text-center
+                        .app-icon
+                          img(src='/assets/images/app/dribble.png' width='30' alt='')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  
+                        .app-name
+                          p.mb-0.mt-1 Dribble
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 
+                  .col
+                    a(href='javascript:;')
+                      .app-box.text-center
+                        .app-icon
+                          img(src='/assets/images/app/youtube.png' width='30' alt='')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  
+                        .app-name
+                          p.mb-0.mt-1 YouTube
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 
+                  .col
+                    a(href='javascript:;')
+                      .app-box.text-center
+                        .app-icon
+                          img(src='/assets/images/app/google.png' width='30' alt='')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  
+                        .app-name
+                          p.mb-0.mt-1 News
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 
+                  .col
+                    a(href='javascript:;')
+                      .app-box.text-center
+                        .app-icon
+                          img(src='/assets/images/app/envato.png' width='30' alt='')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  
+                        .app-name
+                          p.mb-0.mt-1 Envato
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 
+                  .col
+                    a(href='javascript:;')
+                      .app-box.text-center
+                        .app-icon
+                          img(src='/assets/images/app/safari.png' width='30' alt='')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  
+                        .app-name
+                          p.mb-0.mt-1 Safari
+                // end row
+          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+          li.nav-item.dropdown.dropdown-large
+            a.nav-link.dropdown-toggle.dropdown-toggle-nocaret.position-relative(href='#' data-bs-toggle='dropdown')
+              span.alert-count 7
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              i.bx.bx-bell
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            .dropdown-menu.dropdown-menu-end
+              a(href='javascript:;')
+                .msg-header
+                  p.msg-header-title Notifications
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  p.msg-header-badge 8 New
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              .header-notifications-list
+                a.dropdown-item(href='javascript:;')
+                  .d-flex.align-items-center
+                    .user-online
+                      img.msg-avatar(src='/assets/images/avatars/avatar-1.png' alt='user avatar')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .flex-grow-1
+                      h6.msg-name
+                        | Daisy Anderson
+                        span.msg-time.float-end
+                          | 5 sec
+                          | ago
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.msg-info The standard chunk of lorem
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a.dropdown-item(href='javascript:;')
+                  .d-flex.align-items-center
+                    .notify.bg-light-danger.text-danger
+                      | dc
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .flex-grow-1
+                      h6.msg-name
+                        | New Orders 
+                        span.msg-time.float-end
+                          | 2 min
+                          | ago
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.msg-info You have recived new orders
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a.dropdown-item(href='javascript:;')
+                  .d-flex.align-items-center
+                    .user-online
+                      img.msg-avatar(src='/assets/images/avatars/avatar-2.png' alt='user avatar')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .flex-grow-1
+                      h6.msg-name
+                        | Althea Cabardo 
+                        span.msg-time.float-end
+                          | 14
+                          | sec ago
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.msg-info Many desktop publishing packages
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a.dropdown-item(href='javascript:;')
+                  .d-flex.align-items-center
+                    .notify.bg-light-success.text-success
+                      img(src='/assets/images/app/outlook.png' width='25' alt='user avatar')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .flex-grow-1
+                      h6.msg-name
+                        | Account Created
+                        span.msg-time.float-end
+                          | 28 min
+                          | ago
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.msg-info Successfully created new email
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a.dropdown-item(href='javascript:;')
+                  .d-flex.align-items-center
+                    .notify.bg-light-info.text-info
+                      | Ss
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .flex-grow-1
+                      h6.msg-name
+                        | New Product Approved 
+                        span.msg-time.float-end 2 hrs ago
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.msg-info Your new product has approved
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a.dropdown-item(href='javascript:;')
+                  .d-flex.align-items-center
+                    .user-online
+                      img.msg-avatar(src='/assets/images/avatars/avatar-4.png' alt='user avatar')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .flex-grow-1
+                      h6.msg-name
+                        | Katherine Pechon 
+                        span.msg-time.float-end
+                          | 15
+                          | min ago
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.msg-info Making this the first true generator
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a.dropdown-item(href='javascript:;')
+                  .d-flex.align-items-center
+                    .notify.bg-light-success.text-success
+                      i.bx.bx-check-square
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .flex-grow-1
+                      h6.msg-name
+                        | Your item is shipped 
+                        span.msg-time.float-end
+                          | 5 hrs
+                          | ago
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.msg-info Successfully shipped your item
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a.dropdown-item(href='javascript:;')
+                  .d-flex.align-items-center
+                    .notify.bg-light-primary
+                      img(src='/assets/images/app/github.png' width='25' alt='user avatar')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .flex-grow-1
+                      h6.msg-name
+                        | New 24 authors
+                        span.msg-time.float-end
+                          | 1 day
+                          | ago
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.msg-info 24 new authors joined last week
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a.dropdown-item(href='javascript:;')
+                  .d-flex.align-items-center
+                    .user-online
+                      img.msg-avatar(src='/assets/images/avatars/avatar-8.png' alt='user avatar')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .flex-grow-1
+                      h6.msg-name
+                        | Peter Costanzo 
+                        span.msg-time.float-end
+                          | 6 hrs
+                          | ago
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.msg-info It was popularised in the 1960s
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              a(href='javascript:;')
+                .text-center.msg-footer
+                  button.btn.btn-light.w-100 View All Notifications
+          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+          li.nav-item.dropdown.dropdown-large
+            a.nav-link.dropdown-toggle.dropdown-toggle-nocaret.position-relative(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+              span.alert-count 8
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              i.bx.bx-shopping-bag
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            .dropdown-menu.dropdown-menu-end
+              a(href='javascript:;')
+                .msg-header
+                  p.msg-header-title My Cart
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  p.msg-header-badge 10 Items
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              .header-message-list
+                a.dropdown-item(href='javascript:;')
+                  .d-flex.align-items-center.gap-3
+                    .position-relative
+                      .cart-product.rounded-circle.bg-light
+                        img(src='/assets/images/products/11.png' alt='product image')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .flex-grow-1
+                      h6.cart-product-title.mb-0 Men White T-Shirt
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.cart-product-price.mb-0 1 X $29.00
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    div
+                      p.cart-price.mb-0 $250
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .cart-product-cancel
+                      i.bx.bx-x
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a.dropdown-item(href='javascript:;')
+                  .d-flex.align-items-center.gap-3
+                    .position-relative
+                      .cart-product.rounded-circle.bg-light
+                        img(src='/assets/images/products/02.png' alt='product image')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .flex-grow-1
+                      h6.cart-product-title.mb-0 Men White T-Shirt
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.cart-product-price.mb-0 1 X $29.00
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    div
+                      p.cart-price.mb-0 $250
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .cart-product-cancel
+                      i.bx.bx-x
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a.dropdown-item(href='javascript:;')
+                  .d-flex.align-items-center.gap-3
+                    .position-relative
+                      .cart-product.rounded-circle.bg-light
+                        img(src='/assets/images/products/03.png' alt='product image')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .flex-grow-1
+                      h6.cart-product-title.mb-0 Men White T-Shirt
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.cart-product-price.mb-0 1 X $29.00
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    div
+                      p.cart-price.mb-0 $250
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .cart-product-cancel
+                      i.bx.bx-x
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a.dropdown-item(href='javascript:;')
+                  .d-flex.align-items-center.gap-3
+                    .position-relative
+                      .cart-product.rounded-circle.bg-light
+                        img(src='/assets/images/products/04.png' alt='product image')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .flex-grow-1
+                      h6.cart-product-title.mb-0 Men White T-Shirt
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.cart-product-price.mb-0 1 X $29.00
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    div
+                      p.cart-price.mb-0 $250
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .cart-product-cancel
+                      i.bx.bx-x
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a.dropdown-item(href='javascript:;')
+                  .d-flex.align-items-center.gap-3
+                    .position-relative
+                      .cart-product.rounded-circle.bg-light
+                        img(src='/assets/images/products/05.png' alt='product image')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .flex-grow-1
+                      h6.cart-product-title.mb-0 Men White T-Shirt
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.cart-product-price.mb-0 1 X $29.00
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    div
+                      p.cart-price.mb-0 $250
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .cart-product-cancel
+                      i.bx.bx-x
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a.dropdown-item(href='javascript:;')
+                  .d-flex.align-items-center.gap-3
+                    .position-relative
+                      .cart-product.rounded-circle.bg-light
+                        img(src='/assets/images/products/06.png' alt='product image')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .flex-grow-1
+                      h6.cart-product-title.mb-0 Men White T-Shirt
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.cart-product-price.mb-0 1 X $29.00
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    div
+                      p.cart-price.mb-0 $250
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .cart-product-cancel
+                      i.bx.bx-x
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a.dropdown-item(href='javascript:;')
+                  .d-flex.align-items-center.gap-3
+                    .position-relative
+                      .cart-product.rounded-circle.bg-light
+                        img(src='/assets/images/products/07.png' alt='product image')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .flex-grow-1
+                      h6.cart-product-title.mb-0 Men White T-Shirt
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.cart-product-price.mb-0 1 X $29.00
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    div
+                      p.cart-price.mb-0 $250
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .cart-product-cancel
+                      i.bx.bx-x
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a.dropdown-item(href='javascript:;')
+                  .d-flex.align-items-center.gap-3
+                    .position-relative
+                      .cart-product.rounded-circle.bg-light
+                        img(src='/assets/images/products/08.png' alt='product image')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .flex-grow-1
+                      h6.cart-product-title.mb-0 Men White T-Shirt
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.cart-product-price.mb-0 1 X $29.00
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    div
+                      p.cart-price.mb-0 $250
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .cart-product-cancel
+                      i.bx.bx-x
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a.dropdown-item(href='javascript:;')
+                  .d-flex.align-items-center.gap-3
+                    .position-relative
+                      .cart-product.rounded-circle.bg-light
+                        img(src='/assets/images/products/09.png' alt='product image')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .flex-grow-1
+                      h6.cart-product-title.mb-0 Men White T-Shirt
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      p.cart-product-price.mb-0 1 X $29.00
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    div
+                      p.cart-price.mb-0 $250
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .cart-product-cancel
+                      i.bx.bx-x
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              a(href='javascript:;')
+                .text-center.msg-footer
+                  .d-flex.align-items-center.justify-content-between.mb-3
+                    h5.mb-0 Total
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    h5.mb-0.ms-auto $489.00
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  button.btn.btn-light.w-100 Checkout
+      | &#x9;&#x9;&#x9;&#x9;&#x9;
+      .user-box.dropdown.px-3
+        a.d-flex.align-items-center.nav-link.dropdown-toggle.gap-3.dropdown-toggle-nocaret(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+          img.user-img(src='/assets/images/avatars/avatar-2.png' alt='user avatar')
+          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+          .user-info
+            p.user-name.mb-0 Pauline Seitz
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            p.designattion.mb-0 Web Designer
+        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+        ul.dropdown-menu.dropdown-menu-end
+          li
+            a.dropdown-item.d-flex.align-items-center(href='javascript:;')
+              i.bx.bx-user.fs-5
+              span Profile
+          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+          li
+            a.dropdown-item.d-flex.align-items-center(href='javascript:;')
+              i.bx.bx-cog.fs-5
+              span Settings
+          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+          li
+            a.dropdown-item.d-flex.align-items-center(href='javascript:;')
+              i.bx.bx-home-circle.fs-5
+              span Dashboard
+          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+          li
+            a.dropdown-item.d-flex.align-items-center(href='javascript:;')
+              i.bx.bx-dollar-circle.fs-5
+              span Earnings
+          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+          li
+            a.dropdown-item.d-flex.align-items-center(href='javascript:;')
+              i.bx.bx-download.fs-5
+              span Downloads
+          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+          li
+            .dropdown-divider.mb-0
+          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+          li
+            a.dropdown-item.d-flex.align-items-center(href='javascript:;')
+              i.bx.bx-log-out-circle
+              span Logout
+// end header
+// start page wrapper
+//- header.main-header
+//-   .d-flex.align-items-center.logo-box.justify-content-start
+//-     // Logo
+//-     a.logo(href='index.html')
+//-       // logo
+//-       .logo-mini.w-30
+//-         //- span.light-logo
+//-         //-   img(src='images/logo-letter.png' alt='logo')
+//-         //- span.dark-logo
+//-         //-   img(src='images/logo-letter.png' alt='logo')
+//-       .logo-lg
+//-         span.light-logo
+//-           img(src='/images/logo-dark-text.png' alt='logo')
+//-         span.dark-logo
+//-           img(src='/images/logo-light-text.png' alt='logo')
+//-   // Header Navbar
+//-   nav.navbar.navbar-static-top
+//-     // Sidebar toggle button
+//-     .app-menu
+//-       ul.header-megamenu.nav
+//-         li.btn-group.nav-item
+//-           a.waves-effect.waves-light.nav-link.push-btn.btn-outline.no-border.btn-primary-light(href='#' data-toggle='push-menu' role='button')
+//-             i(data-feather='align-left')
+//-         li.btn-group.d-lg-inline-flex.d-none
+//-           .app-menu
+//-             .search-bx.mx-5
+//-               form
+//-                 .input-group
+//-                   input.form-control(type='search' placeholder='Search' aria-label='Search' aria-describedby='button-addon2')
+//-                   .input-group-append
+//-                     button#button-addon3.btn(type='submit')
+//-                       i(data-feather='search')
+//-     .navbar-custom-menu.r-side
+//-       ul.nav.navbar-nav
+//-         li.btn-group.nav-item.d-lg-inline-flex.d-none
+//-           a.waves-effect.waves-light.nav-link.btn-outline.no-border.full-screen.btn-warning-light(href='#' data-provide='fullscreen' title='Full Screen')
+//-             i(data-feather='maximize')
+//-         // User Account
+//-         li.dropdown.user.user-menu
+//-           a.waves-effect.waves-light.dropdown-toggle.no-border.p-5(href='#' data-bs-toggle='dropdown' title='User')
+//-             img.avatar.avatar-pill(src='/images/avatar/3.jpg' alt='')
+//-           ul.dropdown-menu.animated.flipInX
+//-             li.user-body
+//-               //- a.dropdown-item(href='#')
+//-               //-   i.ti-user.text-muted.me-2
+//-               //-   |  Profile
+//-               //- a.dropdown-item(href='#')
+//-               //-   i.ti-wallet.text-muted.me-2
+//-               //-   |  My Wallet
+//-               //- a.dropdown-item(href='#')
+//-               //-   i.ti-settings.text-muted.me-2
+//-               //-   |  Settings
+//-               //- .dropdown-divider
+//-               a.dropdown-item(href='/logout')
+//-                 i.ti-lock.text-muted.me-2
+//-                 |  Logout
+//-         // Control Sidebar Toggle Button
+//-         //- li
+//-         //-   a.waves-effect.waves-light.btn-outline.no-border.btn-danger-light(href='#' data-toggle='control-sidebar' title='Setting')
+//-         //-     i(data-feather='settings')

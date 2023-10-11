@@ -1,0 +1,12 @@
+- RID: 0
+  Label: HR
+  Number: 1
+  modules: [
+    1,2,3,4
+  ]
+- RID: 2
+  Label: USER
+  Number: 1
+  modules: [
+    1
+  ]

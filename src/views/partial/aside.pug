@@ -1,0 +1,108 @@
+.sidebar-wrapper(data-simplebar='true')
+	.sidebar-header
+		div
+			img.logo-icon(src='/assets/images/logo-icon.png' alt='logo icon')
+		| &#x9;&#x9;&#x9;&#x9;
+		div
+			h4.logo-text SSAI 
+		| &#x9;&#x9;&#x9;&#x9;
+		.toggle-icon.ms-auto
+			i.bx.bx-arrow-back
+	// navigation
+	ul#menu.metismenu
+		li
+			a(href='/dashboard')
+				.parent-icon
+					i.bx.bx-home-alt
+				| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+				.menu-title Dashboard
+		| &#x9;&#x9;&#x9;&#x9;		
+		- if(typeof profile !== 'undefined'){
+			- if(profile.roleLabel == 'admin'){
+				li
+				a(href='/user')
+					.parent-icon
+						i.lni.lni-users
+					| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+					.menu-title Users
+					| &#x9;&#x9;&#x9;&#x9;
+				li
+				a(href='/roles')
+					.parent-icon
+						i.lni.lni-ruler-pencil
+					| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+					.menu-title Roles
+					| &#x9;&#x9;&#x9;&#x9;
+				li
+				a(href='/filter')
+					.parent-icon
+						i.lni.lni-user
+					| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+					.menu-title Executive Manager
+					| &#x9;&#x9;&#x9;&#x9;
+			- } else if(profile.roleLabel != 'admin'){
+				li
+				a(href='/filter')
+					.parent-icon
+						i.lni.lni-clipboard
+					| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+					.menu-title Invoices
+					| &#x9;&#x9;&#x9;&#x9;
+			- }
+		- }
+		li.menu-label 
+			| &#x9;&#x9;&#x9;&#x9;
+		.copyright.text-start.m-25
+			p
+				strong.d-block SSAI Invoice Reports
+				|  © 2023 All Rights Reserved
+
+	// end navigation
+//- aside.main-sidebar
+//- 	// sidebar
+//- 	section.sidebar.position-relative
+//- 		.multinav
+//- 			.multinav-scroll(style='height: 100%;')
+//- 				// sidebar menu
+//- 				ul.sidebar-menu(data-widget='tree')
+//- 					//- li.treeview(style='padding-left: 0px; padding-right: 0px;') 	
+//- 					//- 	include profile.pug
+//- 					li
+//- 						a(href='/dashboard')
+//- 							i(data-feather='monitor')
+//- 							span Dashboard
+//- 							span.pull-right-container
+//- 								i.fa.fa-angle-right.pull-right
+//- 					- if(typeof profile !== 'undefined'){
+//- 						- if(profile.roleLabel == 'admin'){
+//- 							li
+//- 								a(href='/user')
+//- 									i(data-feather='user')
+//- 									span Users
+//- 									span.pull-right-container
+//- 										i.fa.fa-angle-right.pull-right
+//- 							li
+//- 								a(href='/roles')
+//- 									i(data-feather='user')
+//- 									span Roles
+//- 									span.pull-right-container
+//- 										i.fa.fa-angle-right.pull-right
+//- 							li
+//- 								a(href='/filter')
+//- 									i(data-feather='user')
+//- 									span Executive Manager
+//- 									span.pull-right-container
+//- 										i.fa.fa-angle-right.pull-right
+//- 						- } else if(profile.roleLabel != 'admin'){
+//- 							li
+//- 								a(href='/filter')
+//- 									i(data-feather='user')
+//- 									span Invoices
+//- 									span.pull-right-container
+//- 										i.fa.fa-angle-right.pull-right
+//- 						- }
+//- 					- }
+//- 					.copyright.text-start.m-25
+//- 						p
+//- 							strong.d-block SSAI Invoice Reports
+//- 							|  © 2023 All Rights Reserved

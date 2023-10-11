@@ -1,0 +1,119 @@
+extends ../../../views/admin_layout 
+block content
+    .wrapper
+        include ../../../views/partial/aside.pug
+        include ../../../views/partial/header.pug    
+        .page-wrapper
+            .page-content
+                .row 
+                    .col-xl-9.mx-auto
+                        .card.border-top.border-0.border-4.border-white
+                            .card-body
+                                .border.p-4.rounded
+                                    .card-title.d-flex.align-items-center
+                                        div
+                                            i.bx.bxs-user.me-1.font-22.text-white
+                                        h5.mb-0.text-white Add User 
+                                    hr
+                                    form#userUpdateForm.form(action='/user/add' method='POST')
+                                        .row.mb-3
+                                            label.col-sm-3.col-form-label(for='inputFirstName') First Name 
+                                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                                            .col-sm-9
+                                                input#inputFirstName.form-control(type='text' name='fname' placeholder='First Name')
+                                        .row.mb-3
+                                            label.col-sm-3.col-form-label(for='inputLastName') Last Name 
+                                            .col-sm-9
+                                                input#inputLastName.form-control(type='text' name='lname' placeholder='Last Name') 
+                                        .row.mb-3
+                                            label.col-sm-3.col-form-label(for='inputEmail') E-mail 
+                                            .col-sm-9
+                                                input#inputEmail.form-control(type='text' name='email' placeholder='E-mail') 
+                                        .row.mb-3
+                                            label.col-sm-3.col-form-label(for='inputContact') Contact Number 
+                                            .col-sm-9
+                                                input#inputContact.form-control(type='text' name='phone' placeholder='Phone') 
+                                        .row.mb-3
+                                            label.col-sm-3.col-form-label(for='inputEmployeeCode') Employee code
+                                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                                            .col-sm-9
+                                                input#inputEmployeeCode.form-control(type='text' name='employeeCode' placeholder='Employee code') 
+                                        .row.mb-3
+                                            label.col-sm-3.col-form-label(for='inputEmployer') Employer 
+                                            .col-sm-9
+                                                input#inputEmployer.form-control(type='text' name='employer' placeholder='Employer Name') 
+                                        .row.mb-3
+                                            label.col-sm-3.col-form-label(for='inputRole') Role 
+                                            .col-sm-9
+                                                select#inputRole.form-select.mb-3(name='role')
+                                                    - for(i=0;i<roles.length;i++){
+                                                        option(value=roles[i].number)=roles[i].label
+                                                    - }
+                                                    option(value='0') Admin
+                                        .row.mb-3
+                                            label.col-sm-3.col-form-label(for='inputPassword') Password 
+                                            .col-sm-9
+                                                input#inputPassword.form-control(type='password' name='password' placeholder='Password')
+                                        .row
+                                            label.col-sm-3.col-form-label 
+                                            .col-sm-4.align-items-center.text-center
+                                                button.btn.btn-light.px-5.mx-5(type='button') Cancel
+                                            .col-sm-4.align-items-center.text-center
+                                                button.btn.btn-light.px-5.mx-5(type='submit') Save
+                        // end row
+
+//- extends ../../../views/admin_layout 
+//- block content 
+//-     .col-md-12.col-12
+//-         .box
+//-             .box-header.with-border
+//-                 h4.box-title Add User
+//-             // /.box-header
+//-             form#userUpdateForm.form(action='/user/add' method='POST')
+//-                 .box-body
+//-                     .row
+//-                         .col-md-3
+//-                             .form-group
+//-                                 label.form-label First Name
+//-                                 input.form-control(type='text' name='fname' placeholder='First Name')
+//-                         .col-md-3
+//-                             .form-group
+//-                                 label.form-label Last Name
+//-                                 input.form-control(type='text' name='lname' placeholder='Last Name')
+//-                         .col-md-3
+//-                             .form-group
+//-                                 label.form-label E-mail
+//-                                 input.form-control(type='text' name='email' placeholder='E-mail')
+//-                         .col-md-3
+//-                             .form-group
+//-                                 label.form-label Contact Number
+//-                                 input.form-control(type='text' name='phone' placeholder='Phone')
+//-                     .row
+//-                         .col-md-3
+//-                             .form-group
+//-                                 label.form-label Employee Code
+//-                                 input.form-control(type='text' name='employeeCode' placeholder='Employee code')
+//-                         .col-md-3
+//-                             .form-group
+//-                                 label.form-label Employer
+//-                                 input.form-control(type='text' name='employer' placeholder='Employer Name')
+//-                         .col-md-3
+//-                             .form-group
+//-                                 label.form-label Role
+//-                                 select.form-select(name='role')
+//-                                     - for(i=0;i<roles.length;i++){
+//-                                         option(value=roles[i].number)=roles[i].label
+//-                                     - }
+//-                                     option(value='0') Admin
+//-                         .col-md-3
+//-                             .form-group
+//-                                 label.form-label Password
+//-                                 input.form-control(type='password' name='password' placeholder='Password')
+//-                 .box-footer.pull-right
+//-                     button.btn.btn-warning.me-1(type='button')
+//-                         i.ti-trash
+//-                         |  Cancel
+//-                     button.btn.btn-primary(type='submit')
+//-                         i.ti-save-alt
+//-                         |  Save
+//-         // /.box

@@ -1,0 +1,78 @@
+extends ../../../views/admin_layout  
+block content
+    .wrapper
+    include ../../../views/partial/aside.pug
+    include ../../../views/partial/header.pug    
+    .page-wrapper
+        .page-content        
+            .row
+                .col-12
+                    .card
+                        .card-body
+                            .row
+                                .col-6
+                                    h4.card-title Export Data
+                                    | &#x9;&#x9;&#x9;&#x9;&#x9;
+                        .card-body
+                            .table-responsive
+                                table#example2.myDataTable.table.table-striped.table-bordered
+                                    thead
+                                        tr
+                                            each title in tableHeader 
+                                                th= title
+                                    tbody
+                                        each dItem in data
+                                            tr
+                                                each tTitle in tableHeader
+                                                    td= dItem[tTitle]
+                                    tfoot
+                                        tr.searchFilter
+                                            each title in tableHeader 
+                                                th
+        include ../../../views/partial/footer.pug
+        script.
+            $(document).ready(function () {
+                var table = $('.myDataTable').DataTable({
+                    paging: true,  // Enable pagination if needed
+                });
+
+                // Add filter inputs to the table footer
+                $('.myDataTable tfoot th').each(function () {
+                    var title = $(this).text();
+                    $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+                });
+
+                // Enable filtering for each column
+                table.columns().every(function () {
+                    var that = this;
+
+                    $('input', this.footer()).on('keyup change', function () {
+                        if (that.search() !== this.value) {
+                            that.search(this.value).draw();
+                        }
+                    });
+                });
+            });
+//- extends ../../../views/admin_layout 
+//- block content 
+//-     .col-12
+//-         .box
+//-             .box-header.with-border
+//-                 h3.box-title Export Data
+//-                 // /.box-header
+//-             .box-body
+//-                 .table-responsive
+//-                     table.tableList.table.table-bordered.table-striped(style='width:100%')
+//-                         thead
+//-                             tr
+//-                                 each title in tableHeader 
+//-                                     th= title
+//-                         tbody
+//-                             each dItem in data
+//-                                 tr
+//-                                     each tTitle in tableHeader
+//-                                         td= dItem[tTitle]
+//-                         tfoot
+//-                             tr.searchFilter
+//-                                 each title in tableHeader 
+//-                                     th= title

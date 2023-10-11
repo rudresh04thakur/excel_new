@@ -1,0 +1,225 @@
+extends ../../../views/admin_layout 
+block content
+    .wrapper
+        include ../../../views/partial/aside.pug
+        include ../../../views/partial/header.pug    
+        .page-wrapper
+            .page-content
+                // breadcrumb
+                .page-breadcrumb.d-none.d-sm-flex.align-items-center.mb-3
+                    .breadcrumb-title.pe-3 Report
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;
+                    .ps-3
+                        nav(aria-label='breadcrumb')
+                            ol.breadcrumb.mb-0.p-0
+                                li.breadcrumb-item
+                                    a(href='javascript:;')
+                                        i.bx.bx-home-alt
+                                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                                li.breadcrumb-item.active(aria-current='page') Highcharts
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;
+                    
+                .row
+                    .col-xl-9.mx-auto
+                        .card
+                            .card-body
+                                #chart_gbtech
+                        
+                // end row
+                // end page wrapper
+                // start overlay
+                .overlay.toggle-icon
+                // end overlay
+                // Start Back To Top Button
+                a.back-to-top(href='javaScript:;')
+                    i.bx.bxs-up-arrow-alt
+                // End Back To Top Button
+                footer.page-footer
+                    a.nav-link(href='/') FAQ
+                    | 	  © 2021 
+                    a(href='/') Travel Portal
+                    | . All Rights Reserved.
+    // end wrapper
+    // start switcher
+    
+    // end switcher
+    // Bootstrap JS
+    script(src='assets/js/bootstrap.bundle.min.js')
+    // plugins
+    script(src='assets/js/jquery.min.js')
+    | &#x9;
+    script(src='assets/plugins/simplebar/js/simplebar.min.js')
+    | &#x9;
+    script(src='assets/plugins/metismenu/js/metisMenu.min.js')
+    | &#x9;
+    script(src='assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')
+    // highcharts js
+    script(src='assets/plugins/highcharts/js/highcharts.js')
+    | &#x9;
+    script(src='assets/plugins/highcharts/js/highcharts-more.js')
+    | &#x9;
+    script(src='assets/plugins/highcharts/js/variable-pie.js')
+    | &#x9;
+    script(src='assets/plugins/highcharts/js/solid-gauge.js')
+    | &#x9;
+    script(src='assets/plugins/highcharts/js/highcharts-3d.js')
+    | &#x9;
+    script(src='assets/plugins/highcharts/js/cylinder.js')
+    | &#x9;
+    script(src='assets/plugins/highcharts/js/funnel3d.js')
+    | &#x9;
+    script(src='assets/plugins/highcharts/js/exporting.js')
+    | &#x9;
+    script(src='assets/plugins/highcharts/js/export-data.js')
+    | &#x9;
+    script(src='assets/plugins/highcharts/js/accessibility.js')
+    | &#x9;
+    script(src='assets/plugins/highcharts/js/highcharts-custom.script.js')
+    // app JS
+    script(src='assets/js/app.js')
+    script.
+        const groupedArray = !{JSON.stringify(data)};;
+        const totalInvoice ="#{totalInvoice}";
+        $(function () {
+        "use strict";
+        const chartData = [];
+
+          // Loop through the groupedArray and construct the data array
+        groupedArray.forEach((item, index) => {
+        const dataObj = {
+            name: `${item.contract_name} (${item.count})`, // Assuming contract_name is the name you want
+            y: item.percentage, // Assuming count is the count you want
+        };
+
+        // Set the sliced and selected properties for the first item
+        if (index === 0) {
+            dataObj.sliced = true;
+            dataObj.selected = true;
+        }
+
+        chartData.push(dataObj);
+        });
+
+        // chart 1
+        Highcharts.chart('chart_gbtech', {
+        chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie',
+        styledMode: true
+        },
+        credits: {
+        enabled: false
+        },
+        title: {
+        text: 'Invoice Report'
+        },
+        tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        accessibility: {
+        point: {
+        valueSuffix: '%'
+        }
+        },
+        plotOptions: {
+        pie: {
+        allowPointSelect: true,
+        cursor: 'pointer',
+        dataLabels: {
+        enabled: true,
+        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+        }
+        }
+        },
+        series: [{
+        name: 'Brands',
+        colorByPoint: true,
+        data: chartData
+        }]
+        });
+        });
+
+//- extends ../../../views/admin_layout 
+//- block content 
+//-     .row
+//-         .col-12
+//-             .box
+//-                 .box-header
+//-                     .row
+//-                         .col-6
+//-                             h4.box-title Anylatics 
+//-                 .box-body
+//-                     .row 
+//-                         .col-md-6.col-lg-4
+//-                             .box
+//-                                 .box-header.with-border
+//-                                     h5.box-title Top Advertisers
+//-                                 .box-body
+//-                                     .text-center.py-20
+//-                                         .donut(data-peity='{ "fill": ["#ff4c52", "#faa700", "#3e8ef7","#3e8877"], "radius": 78, "innerRadius": 50  }') 9,6,5,8
+//-                                     ul.list-inline
+//-                                         li.flexbox.mb-5
+//-                                             div
+//-                                                 span.badge.badge-dot.badge-lg.me-1(style='background-color: #ff4c52')
+//-                                                 //span Abu Dhabi
+//-                                             div 8952
+//-                                         li.flexbox.mb-5
+//-                                             div
+//-                                                 span.badge.badge-dot.badge-lg.me-1(style='background-color: #faa700')
+//-                                                 //span Miami
+//-                                             div 7458
+//-                                         li.flexbox
+//-                                             div
+//-                                                 span.badge.badge-dot.badge-lg.me-1(style='background-color: #3e8ef7')
+//-                                                 //span London
+//-                                             div 3254
+//-                         - if(profile.roleLabel == 'admin'){
+//-                             .col-md-6.col-lg-4
+//-                                 .box
+//-                                     .box-header.with-border
+//-                                         h5.box-title Top Advertisers
+//-                                     .box-body
+//-                                         .text-center.py-20
+//-                                             .donut(data-peity='{ "fill": ["#ff4c52", "#faa700", "#3e8ef7"], "radius": 78, "innerRadius": 50  }') 9,6,7
+//-                                         ul.list-inline
+//-                                             li.flexbox.mb-5
+//-                                                 div
+//-                                                     span.badge.badge-dot.badge-lg.me-1(style='background-color: #ff4c52')
+//-                                                     //span Abu Dhabi
+//-                                                 div 8952
+//-                                             li.flexbox.mb-5
+//-                                                 div
+//-                                                     span.badge.badge-dot.badge-lg.me-1(style='background-color: #faa700')
+//-                                                     //span Miami
+//-                                                 div 7458
+//-                                             li.flexbox
+//-                                                 div
+//-                                                     span.badge.badge-dot.badge-lg.me-1(style='background-color: #3e8ef7')
+//-                                                     //span London
+//-                                                 div 3254
+//-                             .col-md-6.col-lg-4
+//-                                 .box
+//-                                     .box-header.with-border
+//-                                         h5.box-title Top Advertisers
+//-                                     .box-body
+//-                                         .text-center.py-20
+//-                                             .donut(data-peity='{ "fill": ["#ff4c52", "#faa700", "#3e8ef7"], "radius": 78, "innerRadius": 50  }') 9,6,5
+//-                                         ul.list-inline
+//-                                             li.flexbox.mb-5
+//-                                                 div
+//-                                                     span.badge.badge-dot.badge-lg.me-1(style='background-color: #ff4c52')
+//-                                                     //span Abu Dhabi
+//-                                                 div 8952
+//-                                             li.flexbox.mb-5
+//-                                                 div
+//-                                                     span.badge.badge-dot.badge-lg.me-1(style='background-color: #faa700')
+//-                                                     //span Miami
+//-                                                 div 7458
+//-                                             li.flexbox
+//-                                                 div
+//-                                                     span.badge.badge-dot.badge-lg.me-1(style='background-color: #3e8ef7')
+//-                                                     //span London
+//-                                                 div 3254
+//-                         - }

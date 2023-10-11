@@ -1,0 +1,21 @@
+.col-12.hide-profile
+ .box.box-widget.widget-user
+  .box-footer(style="padding-top: 21px")
+   .row
+    .col-12
+     div.mt-3
+      p
+       | Employee Name :
+       - if(typeof profile !== 'undefined'){
+        span.text-gray.ps-10 #{profile.fname} #{profile.lname}
+       - }
+      p
+       | Email :
+      - if(typeof profile !== 'undefined'){
+        span.text-gray.ps-10 #{profile.email}
+      - }
+     //-  p
+     //-   | Phone :
+     //-   span.text-gray.ps-10 #{profile.phone}
+  // /.box-body
+ 
